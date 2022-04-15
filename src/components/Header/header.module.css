@@ -1,0 +1,30 @@
+.menuWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu {
+	background-color: black;
+	min-width: 280px;
+	border-bottom: none;
+	color: #ffffff;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ffffff;
+}
+
+.menu>li:hover {
+	color: #b314fd;
+}
+
+.menu>li:hover::after {
+	border-bottom: 2px solid #b314fd;
+}
+
+.ant-menu-item-selected {
+	color: #b314fd;
+}
+
+.ant-menu-item-selected::after {
+	border-bottom: 2px solid #14fd6d;
+}

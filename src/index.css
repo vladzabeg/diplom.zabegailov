@@ -1,0 +1,61 @@
+@import "~normalize.css";
+
+html {
+    box-sizing: border-box;
+    height: 100%
+}
+
+body {
+    font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+    height: 100%;
+    
+}
+
+.root {
+    height: 100%;
+    color: #ddd;
+}
+
+.container {
+    min-width: 500px;
+    max-width: 992px;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 16px;
+    height: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.content {
+    padding: 20px 0;
+}
+.logo {
+    width: 160px;
+    height: 50px;
+    margin: 5px 5px;
+    background: url(../src/assets/nad41.png);
+}
+
+.header {
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 2px solid #b314fd;
+    border-top: 2px solid #00d9ff;
+}
+
+.contentWrapper {
+    padding: 20px 0px;
+    flex: 1 0 auto;
+}
+
+.wrapper {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.ant-card-head {
+	border-bottom: 1px solid #b314fd;
+}
