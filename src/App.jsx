@@ -104,7 +104,7 @@ export const App = () => {
               <NotFound
                />
             }/>
-       </Routes>
+          </Routes>
         </Content>
         <Footer>
           <FooterContent />
