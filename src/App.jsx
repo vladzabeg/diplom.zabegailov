@@ -15,6 +15,7 @@ const { Header, Footer, Content } = Layout;
 
 export const App = () => {
   //Стейты
+  const [posts, setPosts] = useState({})
   const [content, setContent] = useState([]);
   const [userInformation, setUserInformation] = useState({});
   const [postFlag, setPostFlag] = useState(false)
@@ -33,7 +34,7 @@ export const App = () => {
   useEffect(() => {
     Promise.all([serverApi.getPosts(), serverApi.getUserInfo()]).then(
       ([postsData, userData]) => {
-        setContent(postsData);
+        setPosts(postsData);
         setUserInformation(userData);
         console.log(postsData)
       }
@@ -86,17 +87,17 @@ export const App = () => {
           <Routes>
             <Route path="/" element={
               <PageAllPosts 
-                title="Welcome to Our Image Board!" 
+                title="Домашняя страница" 
                 content={content} 
                 onProductLike={handleProductLike} 
                 createPost={createPost} 
                 deletePost={deletePost}
                 />
             }/>
-            <Route path="/post/:postID" element={
+            <Route path="posts/:productId" element={
               <PagePost 
                 userInformation = {userInformation} 
-                content = {content}
+                posts = {posts}
                 handleProductLike = {handleProductLike}
                />
             }/>

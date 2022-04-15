@@ -38,7 +38,7 @@ export const Post = ({
   return (
     <>
       <Col xs={{ span: 30 }} sm={16} md={12} lg={8} className={s.card_wrapper}>
-      <Link to={`/post/${_id}`}>
+      <Link to={`posts/${_id}`}>
         <Card
           hoverable
           className={s.card}

@@ -30,9 +30,8 @@ export const PostList = ({ title, content, onProductLike, createPost, deletePost
         <div className={s.items}>
           <div>
             <h1>
-              {!title ? "Упс! Здесь должен был быть заголовок..." : title}
+              {!title ? "Заголовок" : title}
             </h1>
-            <p>We're stoked that you're here. 🥳</p>
           </div>
           <ButtonContent text="Create Post" createPost={createPost} />
         </div>

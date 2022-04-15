@@ -57,12 +57,14 @@ class ServerApi {
       },
     }).then(errorResponse);
   }
-  getPostById(postID){
-		return fetch(`${this._baseUrl}/posts/${postID}`, {
+
+  //
+  getPostById(productId){
+		return fetch(`${this._baseUrl}posts/${productId}`, {
 			 headers: {
 				   authorization: this._token,
 			 },
-		}).then(onResponce)
+		}).then(errorResponse)
    }	
 }
 

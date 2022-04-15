@@ -7,23 +7,20 @@ import { useNavigate } from "react-router-dom";
 
  import s from './styles.module.css';
 
-export const OnePost = ({currentUser, onPostLike, _id, likes, image, title, author, text, created_at }) => {
-
-      const isLiked = likes && likes.some((id) => id === currentUser._id);
-      const navigate = useNavigate();
-  
-      const dataFormated = dayjs(created_at).format('dddd, MMMM DD YYYY');
-
-    const handleLikeClick = () => {
-      onPostLike({_id, likes})
-    };
+export const OnePost = ({userInformation, onProductLike, _id, likes, image, title, author, text, created_at }) => {
+       const isLiked = likes && likes.some((id) => id === userInformation._id);
+       const navigate = useNavigate();
+       const dataFormated = dayjs(created_at).format('dddd, MMMM DD YYYY');
+       const handleLikeClick = () => {
+             onProductLike({_id, likes})
+       };
 
   return (
 
 <div className={s.title}>
 <div className={s.card}>
 <a href="#" className={s.btn} onClick={() => navigate(-1)}>Назад</a>
-              <CardHeader
+              <CardHeader className={s.Header}
                     avatar={
                     <Avatar src={author?.avatar && author?.avatar} aria-label="recipe">
                         {!author?.avatar && name.slice(0,1)}
@@ -33,26 +30,23 @@ export const OnePost = ({currentUser, onPostLike, _id, likes, image, title, auth
                     subheader={dataFormated}                    
                 />
                 <CardMedia
+                    padding="0px 20px"
                     component="img"
-                    height="374"
+                    max-height="400px"
+                    height="auto"
                     image={image}
-                    alt="Paella dish"
+                    alt="Изображение"
                 />
                 <CardContent>
-                    <Typography variant="h6" color="text.secondary">
+                    <Typography variant="h3" color="text.secondary">
                         {title}
                     </Typography>
-                    <Typography variant="body2" noWrap color="text.secondary">
+                    <Typography paragraph variant="body2">
                         {text}
                     </Typography>
                 </CardContent>
-                <CardContent>
-                        <Typography paragraph>
-                            {text}
-                        </Typography>
-                    </CardContent>
              <div>
-             <IconButton aria-label="add to favorites" onClick={handleLikeClick} >
+             <IconButton className={s.button} aria-label="add to favorites" onClick={handleLikeClick} >
                         {isLiked ? <Favorite sx={{ fill: "red"}} /> : <Favorite/>}
                         <p>{likes?.length}</p>
                     </IconButton>
